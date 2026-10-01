@@ -1,0 +1,26 @@
+# 操作系统
+Thumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+
+# 本地预览产物
+chrome-prof*/
+shot-*.png
+seg*.png
+
+# Node（本项目无依赖，防御性忽略）
+node_modules/
+npm-debug.log*
