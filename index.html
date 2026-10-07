@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080b12">
+<title>老蔡的个人主页 | 蔡志峰 · 云计算与虚拟化架构师</title>
+<meta name="description" content="蔡志峰（老蔡）的个人主页 —— 云计算与虚拟化解决方案架构师，20+ 年基础软件与云架构经验。">
+<link rel="stylesheet" href="assets/style.css?v=20261007">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>">
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============ 导航 ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">蔡</span>
+      <span>老蔡的主页</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">关于老蔡</a>
+      <a href="#skills">能力图谱</a>
+      <a href="#patents">专利墙</a>
+      <a href="#timeline">职业轨迹</a>
+      <a href="#hobbies">业余生活</a>
+      <a href="#todo">待补充</a>
+      <a href="#contact">联系方式</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ Hero ============ -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="tagline">
+          <span class="dot"></span>
+          <span>当前状态：云上搬砖，仍在扩容</span>
+        </div>
+
+        <h1>
+          <span class="welcome">欢迎来到老蔡的个人主页</span>
+          <span class="grad">蔡志峰 · Cai Zhifeng</span>
+        </h1>
+
+        <div class="hero-role" id="typing">
+          <span id="typingText"></span><span class="cursor">&nbsp;</span>
+        </div>
+
+        <p class="hero-sub">
+          云计算 · 虚拟化 · 混合云 · 边缘计算。<br>
+          写过 CDMA 基站代码，也画过全国一体化大数据中心的图纸；
+          拆过 KVM 内核，也陪客户熬过通宵。
+        </p>
+
+        <div class="hero-joke">
+          <strong>友情提示：</strong>本页面无弹窗、无广告、无需授权通讯录。
+          <br>唯一的技术风险是——您可能会看完之后想聊云。
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#patents">看看我的专利 →</a>
+          <a class="btn btn-ghost" href="#timeline">20 年职业轨迹</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="terminal">
+          <div class="term-bar">
+            <i></i><i></i><i></i>
+            <span>laocai@cloud:~$</span>
+          </div>
+          <div class="term-body">
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">whoami</span></span>
+            <span class="ln">  <span class="c-val" id="termWhoami">蔡志峰（老蔡），1975 年生，北京朝阳</span></span>
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">cat</span> <span class="c-val">role.txt</span></span>
+            <span class="ln">  <span class="c-str" id="termRole">"云计算与虚拟化解决方案架构师"</span></span>
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">uptime</span> <span class="c-dim">--career</span></span>
+            <span class="ln">  <span class="c-val" id="termUptime">22 年</span> <span class="c-dim" id="termUptimeNote">(since 2002-07, 无计划重启)</span></span>
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">ls</span> <span class="c-val">/skills/</span></span>
+            <span class="ln">  <span class="c-val">云架构/ 虚拟化/ 混合云/ 边缘计算/ 数通/</span></span>
+            <span class="ln">  <span class="c-val">行业解决方案/ 国产化测评/</span></span>
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">cat</span> <span class="c-val">/patents/count</span></span>
+            <span class="ln">  <span class="c-str" id="termPatents">13</span> <span class="c-dim" id="termPatentsNote">件已公开专利（第一发明人 8 件）</span></span>
+            <span class="ln"><span class="c-cmd">$</span> <span class="c-key">echo</span> <span class="c-val">$STATUS</span></span>
+            <span class="ln">  <span class="c-cmd">运行正常，负载均衡，无需扩容</span><span class="cursor">&nbsp;</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数据条（由 app.js 从 data/profile.json 的 highlights 动态渲染） -->
+    <div class="stats" style="margin-top:52px" id="statsBar"></div>
+  </div>
+</header>
+
+<!-- ============ 关于 ============ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// about</div>
+      <h2 class="sec-title">关于老蔡</h2>
+      <p class="sec-desc" id="bioText"></p>
+      <span class="sec-joke">—— 简历原文这么写的：「性格中向，工作细致认真，责任心强，乐观坚韧、富有激情」</span>
+    </div>
+
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card reveal">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>教育背景</h3>
+        <p id="eduText"></p>
+        <div class="tags" id="eduTags"></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <h3>个人档案</h3>
+        <p>男 · 1975 年 9 月生 · 北京朝阳<br>已婚，养育有两个孩子</p>
+        <div class="tags">
+          <span class="tag">2002-07 入行</span>
+          <span class="tag">近五年考评 B+</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>证书与考试</h3>
+        <p id="certText"></p>
+        <div class="tags" id="certTags"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 能力图谱 ============ -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// skills</div>
+      <h2 class="sec-title">能力图谱</h2>
+      <p class="sec-desc">
+        从最底层的协议栈，一路上到行业解决方案。用一句话概括：
+        <strong>既能跟内核吵架，也能跟客户喝茶。</strong>
+      </p>
+      <span class="sec-joke">// 技能点不是背下来的，是通宵调出来的</span>
+    </div>
+
+    <div class="cards" id="skillCards"></div>
+
+    <h3 style="margin:44px 0 18px;font-size:18px;font-weight:800">熟练度自评</h3>
+    <div class="skills-grid reveal" id="skillBars"></div>
+
+    <h3 style="margin:44px 0 18px;font-size:18px;font-weight:800">编程语言经历</h3>
+    <div class="cards" style="grid-template-columns:repeat(3,1fr)" id="langCards"></div>
+  </div>
+</section>
+
+<!-- ============ 专利墙 ============ -->
+<section id="patents">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// patents</div>
+      <h2 class="sec-title">专利墙</h2>
+      <p class="sec-desc">
+        发明人「蔡志峰」名下专利的全量检索结果——覆盖华三（H3C）与华为两个时期，
+        经三重交叉验证去重，A/B 稿与外国同族合并计为一件。
+      </p>
+      <span class="sec-joke">// 专利这东西，写的时候痛苦，写完了想截图</span>
+    </div>
+
+    <div class="patent-hero reveal">
+      <div class="patent-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 22l5-2.5 5 2.5-1.5-8.5"/></svg>
+      </div>
+      <div class="patent-hero-text">
+        <h3 id="patentHeadline">已公开专利 13 件 · 其中第一发明人 8 件</h3>
+        <p id="patentSub">申请跨度 2009 – 2023（13 年 7 个月）· 华三 12 件 + 华为 1 件 · 虚拟化主线 6 件</p>
+      </div>
+      <div class="patent-hint" id="patentHint">⚠ 检索于 2026-09-29 · 来源为公开聚合库，非官方登记簿</div>
+    </div>
+
+    <div class="patent-stats" id="patentStats"></div>
+
+    <div class="patent-charts reveal">
+      <div class="pc-block">
+        <div class="pc-title">技术主题分布<span>按主记录计</span></div>
+        <div id="patentThemes" role="img" aria-label="专利技术主题分布（横向条形图）"></div>
+      </div>
+      <div class="pc-block">
+        <div class="pc-title">申请年份分布<span>按申请日归属</span></div>
+        <div id="patentYears" role="img" aria-label="专利申请年份分布（柱状图）"></div>
+      </div>
+    </div>
+
+    <div class="patent-filter reveal" id="patentFilter"></div>
+
+    <div class="patent-grid" id="patentGrid"></div>
+
+    <div class="patent-notes reveal">
+      <div class="pc-title">几点说明<span>诚信声明 · 数据来源</span></div>
+      <ul id="patentNotes"></ul>
+      <div class="patent-co">协作最多的伙伴：<span id="patentCo"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 时间线 ============ -->
+<section id="timeline">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// timeline</div>
+      <h2 class="sec-title">职业轨迹</h2>
+      <p class="sec-desc">
+        从深圳华为的 CDMA 试验局，到华为云的伙伴云解决方案。
+        22 年，一共换过 8 段履历，但主线只有一条：<strong>把复杂系统讲明白、做出来。</strong>
+      </p>
+      <span class="sec-joke">// 时间轴按倒序排列，最新的事最上面（和简历顺序一致）</span>
+    </div>
+
+    <div class="tl" id="timelineList"></div>
+  </div>
+</section>
+
+<!-- ============ 业余生活 ============ -->
+<section id="hobbies">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// life</div>
+      <h2 class="sec-title">业余生活</h2>
+      <p class="sec-desc">
+        写方案时是架构师，下班后是跑者、山友、羽毛球选手，以及音乐的单方面爱好者。
+      </p>
+      <span class="sec-joke">// 简历原文：「喜欢运动（慢跑、爬山）、羽毛球；喜欢音乐」</span>
+    </div>
+
+    <div class="hobby-grid" id="hobbyGrid"></div>
+  </div>
+</section>
+
+<!-- ============ 待补充 ============ -->
+<section id="todo">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// todo</div>
+      <h2 class="sec-title">待补充清单</h2>
+      <p class="sec-desc">
+        这一版先把「骨架」和专利位置搭好，以下内容等老蔡本人提供素材后逐项填充。
+      </p>
+      <span class="sec-joke">// 这不是 bug，是 feature backlog</span>
+    </div>
+
+    <div class="todo-box reveal">
+      <h3>📋 等待补充的内容</h3>
+      <p>以下条目为可编辑占位，补充素材后可直接更新 <code style="font-family:var(--mono);color:var(--accent)">data/profile.json</code>。</p>
+      <ul class="todo-list" id="todoList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 联系 ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <h3>要不……聊两句？</h3>
+      <p>技术问题、方案讨论、行业交流都欢迎。如果是问我「云到底能不能省钱」——<br>那得看你怎么用，先坐下喝杯茶。</p>
+      <div class="contact-ways">
+        <a class="contact-way" id="mailWay" href="#">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          </span>
+          <span>
+            <span class="lbl">EMAIL</span><br>
+            <span class="val" id="mailVal"></span>
+          </span>
+        </a>
+        <a class="contact-way" id="phoneWay" href="#">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </span>
+          <span>
+            <span class="lbl">PHONE</span><br>
+            <span class="val" id="phoneVal"></span>
+          </span>
+        </a>
+        <span class="contact-way">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span>
+            <span class="lbl">BASE</span><br>
+            <span class="val" id="locVal"></span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <span>© <span id="year"></span> 蔡志峰（老蔡）· 个人主页</span>
+      <span class="mono">纯静态 · 零外链 · 离线可用 · 单机部署免运维</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script src="data/fallback.js?v=20261001"></script>
+<script src="assets/app.js?v=20261001"></script>
+</body>
+</html>
